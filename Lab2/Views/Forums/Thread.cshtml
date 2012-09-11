@@ -1,0 +1,29 @@
+﻿@using Lab2.ViewModels
+@model ThreadViewModel
+@{
+    ViewBag.Title = "Thread";
+}
+
+<h2>Thread: @Html.DisplayFor(p => p.ForumThread.Title)</h2>
+
+<p>
+    @Html.ActionLink("Create post", "CreatePost", "Forums")
+</p>
+
+<div class="capclear2 aw detailspanel">
+
+    @foreach (var item in Model.Posts)
+    {
+        <ul>
+            <li>
+                <span>@Html.LabelFor(i => item.CreateDate):</span>@Html.DisplayFor(i => item.CreateDate)
+            </li>
+            <li>
+                <span>@Html.LabelFor(i => item.Title):</span>@Html.DisplayFor(i => item.Title)
+            </li>
+            <li>
+                <span>@Html.LabelFor(i => item.Body):</span>@Html.DisplayFor(i => item.Body)
+            </li>
+        </ul>
+    }
+ </div>

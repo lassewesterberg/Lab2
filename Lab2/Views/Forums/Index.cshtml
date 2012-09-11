@@ -1,0 +1,22 @@
+﻿@using Lab2.Models.Entities;
+@model List<ForumThread>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+           
+<h2>Forums</h2>
+<p>
+    @Html.ActionLink("Create post", "CreatePost", "Forums")
+</p>
+<table>
+@foreach (var Thread in Model)
+{
+    <tr>
+        <td>@Thread.ID</td>
+        <td>@Html.ActionLink(Thread.Title, "Thread", "Forums", new { id = Thread.ID }, null)</td>
+        <td>@Thread.CreateDate</td>
+    </tr>
+}
+</table>

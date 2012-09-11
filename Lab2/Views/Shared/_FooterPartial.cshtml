@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "_FooterPartial";
+}
+<p>
+    If you experience any problems, please contact: 
+
+    <!--for och if för att utse skiljetecken på rätt ställe-->
+
+    @for (int x = 0; x < Lab2.Models.Repositories.Repository.Instance.GetSiteAdmins().Count(); x++)
+    {
+        string spacing;
+        
+        if (x == (Lab2.Models.Repositories.Repository.Instance.GetSiteAdmins().Count() - 1)) 
+        {
+            spacing = " or ";
+        }
+        else if (x == 0)
+        {
+            spacing = "";
+        }
+        else 
+        {
+            spacing = ", ";
+        }
+         @(spacing + Lab2.Models.Repositories.Repository.Instance.GetSiteAdmins()[x].FullName)
+    }
+
+
+</p>

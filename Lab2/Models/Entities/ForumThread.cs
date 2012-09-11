@@ -11,5 +11,6 @@ namespace Lab2.Models.Entities
         public Guid ID { get; set; }
         public string Title { get; set; }
         public DateTime CreateDate { get; set; }
+        
     }
 }
